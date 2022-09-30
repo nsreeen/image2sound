@@ -1,0 +1,7 @@
+/pyvenv.cfg
+/.git
+/lib/
+/share/
+/lib64
+/venv/
+/bin/

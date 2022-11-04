@@ -8,4 +8,5 @@ You can read more [here](https://nsreeen.github.io/blog/rc-2022-week-8-days-2-an
 
 ## Running
 To run the script to convert a single image to sounds:
+
 `python image2sound.py images/i1c.jpg output`

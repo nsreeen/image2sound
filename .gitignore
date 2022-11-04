@@ -5,3 +5,5 @@
 /lib64
 /venv/
 /bin/
+/__pycache__/
+/.ipynb_checkpoints/

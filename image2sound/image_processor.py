@@ -1,7 +1,7 @@
 import cv2
 from matplotlib import pyplot
 
-from blob import Blob
+from blob_model import Blob
 
 def process_image(image_file_name):
     image = cv2.imread(image_file_name)

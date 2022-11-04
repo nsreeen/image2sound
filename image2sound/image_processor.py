@@ -1,5 +1,4 @@
 import cv2
-from matplotlib import pyplot
 
 from blob_model import Blob
 

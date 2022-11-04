@@ -1,3 +1,4 @@
+import sys
 
 from image_processor import process_image
 from sound_generator import get_audio_segment
@@ -7,10 +8,14 @@ SAMPLE_RATE = 44100
 BEATS = 2
 
 if __name__ == "__main__":
-    photos = ["images/i1c.jpg", "images/i2c.jpg", "images/i3c.jpg"]
-    processed = []
-    for p in photos:
-        image, labelled_image, blobs = process_image(p)
+    if len(sys.argv) != 3:
+        print("Incorrect number of arguments.  Call like this: `python image2sound input_image_path.jpg output_file_name`")
+    else:
+        input_file = sys.argv[1]
+        output_file_name = sys.argv[2]
+
+        image, labelled_image, blobs = process_image(input_file)
         sounds = [get_sound(b, BEATS, SAMPLE_RATE) for b in blobs if b.width < 100]
         audio_segment = get_audio_segment(sounds, BEATS, SAMPLE_RATE)
-        processed.append([image, labelled_image, audio_segment, blobs, sounds])
+        
+        audio_segment.export(output_file_name, format="mp3")
